@@ -303,24 +303,44 @@
         /* Responsive */
         @media (max-width: 968px) {
             .hero-content { grid-template-columns: 1fr; text-align: center; gap: 30px; }
-            .profile-image { margin: 0 auto; width: 180px; height: 180px; }
-            .hero-text h1 { font-size: 2.5em; }
-            .section { padding: 35px 25px; }
-            .section-title { font-size: 1.8em; }
+            .profile-image { margin: 0 auto; width: 160px; height: 160px; }
+            .hero-text h1 { font-size: 2.2em; }
+            .hero-text .subtitle { font-size: 1.1em; }
+            .hero-text .description { font-size: 0.95em; }
+            .container { margin-top: -30px; padding: 0 18px; }
+            .section { padding: 22px; }
+            .section-title { font-size: 1.6em; }
             .experience-header { flex-direction: column; }
-            .experience-title { font-size: 1.3em; }
+            .experience-item { padding: 18px; }
+            .experience-title { font-size: 1.15em; }
+            .experience-org { font-size: 0.95em; }
         }
 
         @media (max-width: 640px) {
             .hero { padding: 50px 15px; }
-            .hero-text h1 { font-size: 2em; }
-            .hero-text .subtitle { font-size: 1.1em; }
-            .hero-text .description { font-size: 0.95em; }
-            .section { padding: 25px 20px; margin-bottom: 20px; }
-            .section-title { font-size: 1.5em; }
-            .experience-item { padding: 25px 20px; }
-            .experience-title { font-size: 1.15em; }
-            .experience-org { font-size: 1em; }
+            .profile-image { width: 140px; height: 140px; }
+            .hero-text h1 { font-size: 1.6em; }
+            .hero-text .subtitle { font-size: 0.9em; }
+            .hero-text .description { font-size: 0.85em; line-height: 1.6; }
+            .container { padding: 0 15px; }
+            .section { padding: 16px; margin-bottom: 20px; }
+            .section-title { font-size: 1.3em; margin-bottom: 20px; padding-bottom: 12px; }
+            .section-title i { font-size: 0.8em; }
+            .education-item { padding: 16px; }
+            .education-item h3 { font-size: 1.08em; }
+            .experience-item { padding: 14px; margin-bottom: 14px; }
+            .experience-title { font-size: 1.05em; }
+            .experience-org { font-size: 0.88em; }
+            .duration { padding: 5px 12px; font-size: 0.82em; }
+            .experience-list li { font-size: 0.9em; margin-bottom: 8px; padding-right: 20px; }
+            .courses-grid { grid-template-columns: 1fr; }
+            .course-card { padding: 12px; }
+            .course-card h4 { font-size: 0.92em; }
+            .course-card .provider { font-size: 0.85em; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .skill-card { padding: 14px; }
+            .skill-card h3 { font-size: 0.98em; }
+            .skill-tag { padding: 6px 10px; font-size: 0.85em; }
         }
 
         @media print {
