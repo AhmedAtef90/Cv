@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>كريم محمد عبد العاطي - خبير تكنولوجيا المعلومات والتحول الرقمي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a2540;
+            --secondary: #1a5490;
+            --accent: #2e7cc4;
+            --gold: #c9a959;
+            --dark: #1e1e1e;
+            --gray: #6b7280;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background: var(--light-bg);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+            color: var(--white);
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 15% 50%, rgba(201,169,89,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(46,124,196,0.15) 0%, transparent 50%);
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 5px solid var(--gold);
+            object-fit: cover;
+            object-position: center top;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .hero-text h1 {
+            font-size: 3.5em;
+            font-weight: 900;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.4em;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .hero-text .description {
+            font-size: 1.1em;
+            line-height: 1.9;
+            opacity: 0.95;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: -50px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Section */
+        .section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .section-title {
+            font-size: 2.2em;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 4px solid var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            color: var(--gold);
+            font-size: 0.9em;
+        }
+
+        /* Education */
+        .education-item {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border-right: 5px solid var(--accent);
+        }
+
+        .education-item h3 {
+            font-size: 1.5em;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .education-item .university {
+            font-size: 1.2em;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* Experience */
+        .experience-item {
+            padding: 35px;
+            margin-bottom: 25px;
+            background: linear-gradient(to left, #fafafa 0%, #ffffff 100%);
+            border-radius: 15px;
+            border-right: 5px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            border-right-color: var(--gold);
+        }
+
+        .experience-item.political {
+            background: linear-gradient(to left, #fef3e2 0%, #fef8ed 100%);
+            border-right-color: var(--gold);
+        }
+
+        .experience-item.political:hover {
+            border-right-color: var(--secondary);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            gap: 20px;
+        }
+
+        .experience-title {
+            font-size: 1.6em;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .experience-org {
+            font-size: 1.15em;
+            color: var(--secondary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .experience-org i {
+            color: var(--accent);
+        }
+
+        .duration {
+            background: var(--gold);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.95em;
+            white-space: nowrap;
+        }
+
+        .experience-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .experience-list li {
+            padding-right: 30px;
+            margin-bottom: 12px;
+            position: relative;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        .experience-list li::before {
+            content: '\f054';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+            color: var(--accent);
+            font-size: 0.75em;
+            top: 8px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border-top: 4px solid var(--accent);
+        }
+
+        .skill-card h3 {
+            font-size: 1.3em;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background: var(--white);
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-weight: 600;
+            color: var(--dark);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            font-size: 0.95em;
+        }
+
+        /* Courses */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .course-card {
+            background: linear-gradient(135deg, #fef3e2 0%, #fef8ed 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border-right: 4px solid var(--gold);
+        }
+
+        .course-card h4 {
+            font-size: 1.1em;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .course-card .provider {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+            .profile-image { margin: 0 auto; width: 180px; height: 180px; }
+            .hero-text h1 { font-size: 2.5em; }
+            .section { padding: 35px 25px; }
+            .section-title { font-size: 1.8em; }
+            .experience-header { flex-direction: column; }
+            .experience-title { font-size: 1.3em; }
+        }
+
+        @media (max-width: 640px) {
+            .hero { padding: 50px 15px; }
+            .hero-text h1 { font-size: 2em; }
+            .hero-text .subtitle { font-size: 1.1em; }
+            .hero-text .description { font-size: 0.95em; }
+            .section { padding: 25px 20px; margin-bottom: 20px; }
+            .section-title { font-size: 1.5em; }
+            .experience-item { padding: 25px 20px; }
+            .experience-title { font-size: 1.15em; }
+            .experience-org { font-size: 1em; }
+        }
+
+        @media print {
+            body { background: white; }
+            .section { box-shadow: none; page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <img src="https://raw.githubusercontent.com/AhmedAtef90/Cv/refs/heads/main/kreem.jpg" 
+                     alt="كريم محمد عبد العاطي" 
+                     class="profile-image">
+                <div class="hero-text">
+                    <h1>كريم محمد عبد العاطي</h1>
+                    <div class="subtitle">خبير تكنولوجيا المعلومات والتحول الرقمي | قيادي سياسي</div>
+                    <div class="description">
+                        خبير في تكنولوجيا المعلومات والتحول الرقمي بخبرة تتجاوز 18 عامًا في قطاعات الإعلام والتكنولوجيا والتعدين. يحمل بكالوريوس علوم الحاسب وتكنولوجيا الإدارة.
+                        <br><br>
+                        شغل مناصب قيادية في مؤسسات إعلامية بارزة: ONTV، أخبار ONA، راديو النيل (NRP)، نجوم إف إم، والتحرير الإخباري، ويعمل حاليًا مديرًا لتكنولوجيا المعلومات بشبكة قنوات CBC وExtra News. شارك في تطوير وإطلاق مشروعات رقمية كبرى، وله خبرة واسعة في إدارة نظم المعلومات والبنية التحتية الرقمية.
+                        <br><br>
+                        سياسيًا، كان من المؤسسين لحزب الدستور، وشارك في العمل العام منذ عام 2011. تولّى مناصب قيادية داخل حزب المحافظين ويشغل حاليًا: نائب رئيس هيئة التحالفات السياسية والانتخابية، عضو المكتب السياسي والهيئة العليا للحزب، عضو مؤسس أمانة شباب الحركة المدنية، ومتحدثًا رسميًا لتنسيقية شباب الأحزاب والسياسيين.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> التعليم</h2>
+            <div class="education-item">
+                <h3>بكالوريوس علوم الحاسب وتكنولوجيا الإدارة</h3>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-laptop-code"></i> الخبرات المهنية في تكنولوجيا المعلومات</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">مدير تكنولوجيا المعلومات</div>
+                        <div class="experience-org"><i class="fas fa-tv"></i> شبكة قنوات CBC وExtra News</div>
+                    </div>
+                    <div class="duration">حتى الآن</div>
+                </div>
+                <ul class="experience-list">
+                    <li>قيادة الاستراتيجية التقنية للشبكة الإعلامية وإدارة البنية التحتية الرقمية الكاملة</li>
+                    <li>الإشراف على تطوير وصيانة أنظمة البث التلفزيوني والمنصات الرقمية</li>
+                    <li>إدارة فرق العمل التقنية وضمان استمرارية الخدمات على مدار الساعة</li>
+                    <li>تطبيق معايير الأمن السيبراني وحماية البيانات في بيئة إعلامية حساسة</li>
+                    <li>تطوير استراتيجيات الحماية الرقمية والتصدي للتهديدات الإلكترونية</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">مدير تكنولوجيا المعلومات</div>
+                        <div class="experience-org"><i class="fas fa-newspaper"></i> التحرير الإخباري</div>
+                    </div>
+                    <div class="duration">فترة سابقة</div>
+                </div>
+                <ul class="experience-list">
+                    <li>إدارة الأنظمة التقنية للمؤسسة الإخبارية وتطوير منصات النشر الرقمي</li>
+                    <li>بناء وإدارة البنية التحتية لأنظمة إدارة المحتوى الإخباري</li>
+                    <li>تطوير حلول تقنية مبتكرة لتحسين كفاءة سير العمل الصحفي</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">مدير تكنولوجيا المعلومات</div>
+                        <div class="experience-org"><i class="fas fa-radio"></i> نجوم إف إم</div>
+                    </div>
+                    <div class="duration">فترة سابقة</div>
+                </div>
+                <ul class="experience-list">
+                    <li>إدارة الأنظمة التقنية لمحطة الراديو والبنية التحتية للبث الإذاعي</li>
+                    <li>تطوير منصات البث الرقمي وأنظمة الأرشفة الصوتية</li>
+                    <li>الإشراف على صيانة المعدات التقنية وأنظمة الاتصالات</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">مدير تكنولوجيا المعلومات</div>
+                        <div class="experience-org"><i class="fas fa-broadcast-tower"></i> راديو النيل (NRP)</div>
+                    </div>
+                    <div class="duration">فترة سابقة</div>
+                </div>
+                <ul class="experience-list">
+                    <li>تطوير وإدارة الأنظمة التقنية لمحطة راديو النيل</li>
+                    <li>بناء البنية التحتية للبث الإذاعي الرقمي والأنظمة الصوتية</li>
+                    <li>تنفيذ مشاريع التحول الرقمي في بيئة البث الإذاعي</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">مدير تكنولوجيا المعلومات</div>
+                        <div class="experience-org"><i class="fas fa-video"></i> أخبار ONA</div>
+                    </div>
+                    <div class="duration">فترة سابقة</div>
+                </div>
+                <ul class="experience-list">
+                    <li>إدارة الأنظمة التقنية لشبكة ONA الإخبارية</li>
+                    <li>تطوير منصات النشر الرقمي وأنظمة إدارة الأخبار</li>
+                    <li>ضمان استمرارية العمل التقني في بيئة إخبارية سريعة الإيقاع</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">مدير تكنولوجيا المعلومات</div>
+                        <div class="experience-org"><i class="fas fa-satellite-dish"></i> ONTV</div>
+                    </div>
+                    <div class="duration">فترة سابقة</div>
+                </div>
+                <ul class="experience-list">
+                    <li>إدارة البنية التحتية التقنية لقناة ONTV التلفزيونية</li>
+                    <li>تطوير أنظمة البث التلفزيوني والمنصات الرقمية</li>
+                    <li>قيادة مشاريع التحول الرقمي في المؤسسة الإعلامية</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-landmark"></i> العمل العام والقيادة السياسية</h2>
+            
+            <div class="experience-item political">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">نائب رئيس هيئة التحالفات السياسية والانتخابية</div>
+                        <div class="experience-org"><i class="fas fa-flag"></i> حزب المحافظين</div>
+                    </div>
+                    <div class="duration">حتى الآن</div>
+                </div>
+                <ul class="experience-list">
+                    <li>قيادة استراتيجيات التحالفات السياسية وإدارة العلاقات مع الأحزاب الأخرى</li>
+                    <li>الإشراف على التخطيط الانتخابي وبناء التحالفات الانتخابية الفعالة</li>
+                    <li>تمثيل الحزب في المفاوضات والحوارات السياسية الرفيعة المستوى</li>
+                </ul>
+            </div>
+
+            <div class="experience-item political">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">عضو المكتب السياسي والهيئة العليا</div>
+                        <div class="experience-org"><i class="fas fa-flag"></i> حزب المحافظين</div>
+                    </div>
+                    <div class="duration">حتى الآن</div>
+                </div>
+                <ul class="experience-list">
+                    <li>المشاركة في صنع القرار الاستراتيجي للحزب على أعلى المستويات</li>
+                    <li>المساهمة في صياغة السياسات الحزبية والرؤية المستقبلية</li>
+                    <li>تمثيل الحزب في المناسبات الوطنية والمؤتمرات السياسية</li>
+                </ul>
+            </div>
+
+            <div class="experience-item political">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">متحدث رسمي وعضو تنسيقية شباب الأحزاب والسياسيين</div>
+                        <div class="experience-org"><i class="fas fa-bullhorn"></i> ممثلاً عن حزب المحافظين</div>
+                    </div>
+                    <div class="duration">حتى الآن</div>
+                </div>
+                <ul class="experience-list">
+                    <li>التحدث الرسمي باسم تنسيقية شباب الأحزاب والسياسيين في المحافل الإعلامية</li>
+                    <li>تعزيز المشاركة السياسية للشباب ودعم الحوار الوطني</li>
+                    <li>بناء جسور التواصل بين الشباب السياسي والمؤسسات الرسمية</li>
+                </ul>
+            </div>
+
+            <div class="experience-item political">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">عضو مؤسس أمانة شباب الحركة المدنية</div>
+                        <div class="experience-org"><i class="fas fa-people-carry"></i> الحركة المدنية</div>
+                    </div>
+                    <div class="duration">حتى الآن</div>
+                </div>
+                <ul class="experience-list">
+                    <li>المساهمة في تأسيس وبناء أمانة شباب الحركة المدنية من الصفر</li>
+                    <li>تطوير برامج تمكين الشباب والمبادرات المجتمعية</li>
+                    <li>تعزيز دور الشباب في العمل المدني والمجتمعي</li>
+                </ul>
+            </div>
+
+            <div class="experience-item political">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">أمين التنظيم - مناصب قيادية متعددة</div>
+                        <div class="experience-org"><i class="fas fa-flag"></i> حزب المحافظين</div>
+                    </div>
+                    <div class="duration">فترات سابقة</div>
+                </div>
+                <ul class="experience-list">
+                    <li>الإشراف على التنظيم الحزبي وإدارة الهياكل التنظيمية</li>
+                    <li>بناء وتطوير القواعد الحزبية في مختلف المحافظات</li>
+                    <li>تطوير آليات العمل الحزبي وتحسين الكفاءة التنظيمية</li>
+                </ul>
+            </div>
+
+            <div class="experience-item political">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">عضو مؤسس</div>
+                        <div class="experience-org"><i class="fas fa-star"></i> حزب الدستور</div>
+                    </div>
+                    <div class="duration">2011</div>
+                </div>
+                <ul class="experience-list">
+                    <li>المساهمة في تأسيس حزب الدستور بعد ثورة 25 يناير</li>
+                    <li>المشاركة في صياغة الرؤية والبرنامج السياسي للحزب</li>
+                    <li>بناء الهيكل التنظيمي الأولي للحزب</li>
+                </ul>
+            </div>
+
+            <div class="experience-item political">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">ناشط سياسي</div>
+                        <div class="experience-org"><i class="fas fa-fist-raised"></i> العمل العام</div>
+                    </div>
+                    <div class="duration">منذ 2011</div>
+                </div>
+                <ul class="experience-list">
+                    <li>المشاركة الفعالة في العمل العام والسياسي منذ ثورة 25 يناير</li>
+                    <li>قيادة مبادرات مجتمعية وسياسية متعددة على مدار أكثر من 14 عامًا</li>
+                    <li>بناء شبكة واسعة من العلاقات السياسية والمجتمعية</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-certificate"></i> الدورات التدريبية والتخصصية</h2>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <h4>دورات متخصصة في الإعلام</h4>
+                    <div class="provider">الأكاديمية الوطنية للتدريب</div>
+                </div>
+                <div class="course-card">
+                    <h4>دورات متقدمة في الأمن السيبراني</h4>
+                    <div class="provider">الجهاز القومي لتنظيم الاتصالات</div>
+                </div>
+                <div class="course-card">
+                    <h4>إدارة البنية التحتية التقنية</h4>
+                    <div class="provider">دورات متخصصة</div>
+                </div>
+                <div class="course-card">
+                    <h4>التحول الرقمي في المؤسسات</h4>
+                    <div class="provider">دورات متخصصة</div>
+                </div>
+                <div class="course-card">
+                    <h4>أنظمة البث الإعلامي الحديثة</h4>
+                    <div class="provider">دورات متخصصة</div>
+                </div>
+                <div class="course-card">
+                    <h4>القيادة السياسية والإدارية</h4>
+                    <div class="provider">دورات تدريبية</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-lightbulb"></i> المهارات</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>مهارات تكنولوجيا المعلومات</h3>
+                    <div class="skill-tags">
+                        <div class="skill-tag">البنية التحتية التقنية</div>
+                        <div class="skill-tag">التحول الرقمي</div>
+                        <div class="skill-tag">نظم المعلومات</div>
+                        <div class="skill-tag">أنظمة البث الإعلامي</div>
+                        <div class="skill-tag">إدارة المشاريع التقنية</div>
+                        <div class="skill-tag">الحلول السحابية</div>
+                        <div class="skill-tag">قواعد البيانات</div>
+                        <div class="skill-tag">الأمن السيبراني</div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>المهارات السياسية والقيادية</h3>
+                    <div class="skill-tags">
+                        <div class="skill-tag">بناء التحالفات</div>
+                        <div class="skill-tag">التخطيط الاستراتيجي</div>
+                        <div class="skill-tag">الحوار والتفاوض</div>
+                        <div class="skill-tag">التواصل الجماهيري</div>
+                        <div class="skill-tag">إدارة الحملات</div>
+                        <div class="skill-tag">التنظيم الحزبي</div>
+                        <div class="skill-tag">العمل المجتمعي</div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>المهارات الإدارية</h3>
+                    <div class="skill-tags">
+                        <div class="skill-tag">إدارة الفرق</div>
+                        <div class="skill-tag">إدارة الأزمات</div>
+                        <div class="skill-tag">اتخاذ القرارات</div>
+                        <div class="skill-tag">إدارة التغيير</div>
+                        <div class="skill-tag">التطوير المؤسسي</div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>اللغات</h3>
+                    <div class="skill-tags">
+                        <div class="skill-tag">العربية - اللغة الأم</div>
+                        <div class="skill-tag">الإنجليزية - جيد جدًا</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
